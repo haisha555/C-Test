@@ -7,7 +7,7 @@
 
 int main()
 {
-    CustomString MyString = CustomString("asddasbsdd");
+    CustomString MyString = CustomString(",asddasbsdd,");
 
     std::cout << MyString.CustomChars << std::endl;
 
@@ -17,7 +17,7 @@ int main()
 
 	std::cout << MyString1.CustomChars << std::endl << (MyString == MyString1) << std::endl << MyString1.find("asb") << std::endl;
 
-    CustomString* MyString2 = MyString.split("sd");
+    CustomString* MyString2 = MyString.split(",");
 
     std::cout << MyString2[0].CustomChars << " " << MyString2[1].CustomChars << " " << MyString2[2].CustomChars << " ";
 
