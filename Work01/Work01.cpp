@@ -7,7 +7,13 @@
 
 int main()
 {
-    CustomString MyString = CustomString(",asddasbsdd,");
+    CustomString MyString1 = CustomString("asddasbsdd");
+    CustomString MyString2 = CustomString("test");
+
+    MyString1 = CustomString(std::move(MyString2));
+
+
+    /*CustomString MyString = CustomString(",asddasbsdd,");
 
     std::cout << MyString.CustomChars << std::endl;
 
@@ -21,7 +27,7 @@ int main()
 
     std::cout << MyString2[0].CustomChars << " " << MyString2[1].CustomChars << " " << MyString2[2].CustomChars << " ";
 
-    delete[] MyString2;
+    delete[] MyString2;*/
 
     // std::cout << a.CustomChars;
 }
