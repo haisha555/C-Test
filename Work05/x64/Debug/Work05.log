@@ -1,0 +1,11 @@
+﻿  Work05.cpp
+D:\theqiu\c++Test\C-Test\Work05\Octree.h(3,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(38,9): warning C4477: “printf”: 格式字符串“%ld”需要类型“long”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(38,9): message : 请考虑在格式字符串中使用“%zd”
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(45,33): warning C4305: “参数”: 从“double”到“float”截断
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(46,30): warning C4305: “参数”: 从“double”到“float”截断
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(58,9): warning C4477: “printf”: 格式字符串“%ld”需要类型“long”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(58,9): message : 请考虑在格式字符串中使用“%zd”
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(68,9): warning C4477: “printf”: 格式字符串“%ld”需要类型“long”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+D:\theqiu\c++Test\C-Test\Work05\Work05.cpp(68,9): message : 请考虑在格式字符串中使用“%zd”
+  Work05.vcxproj -> D:\theqiu\c++Test\C-Test\Work05\x64\Debug\Work05.exe
