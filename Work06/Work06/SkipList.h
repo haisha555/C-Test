@@ -4,14 +4,13 @@
 
 using namespace std;
 
-
-
 class SkipList
 {
 public:
 	SkipListNode* Head;
 	int Level;
-	SkipList() : Level(0) { Head = new SkipListNode(); }
+	int (*RandomLevel)();
+	SkipList(int (*ramdomLevel)()) : RandomLevel(ramdomLevel), Level(0) { Head = new SkipListNode(); }
 
 	bool Search(int Target) {
 		SkipListNode* cur = Head;
@@ -25,7 +24,7 @@ public:
 	}
 
 	void Add(int value) {
-		int AddLevelNum = 1;//randomLevel();
+		int AddLevelNum = RandomLevel();
 		std::vector<SkipListNode*> AddLevels(AddLevelNum, Head);
 		SkipListNode* Cur = Head;
 		for (int i = AddLevelNum - 1; i >= 0; i--) {
@@ -46,14 +45,21 @@ public:
 	}
 
 	bool Erase(int value) {
-
-	}
-
-	int randomLevel() {
-		int Level = 1;
-		while (rand() % 100 < 49 && Level < 32) {
-			Level++;
+		std::vector<SkipListNode*> EraseLevels(Level, Head);
+		SkipListNode* Cur = Head;
+		for (int i = Level - 1; i >= 0; i--) {
+			while (Cur->Nodes[i] != nullptr && Cur->Nodes[i]->Value < value) {
+				Cur = Cur->Nodes[i];
+			}
+			EraseLevels[i] = Cur;
 		}
-		return Level;
+		Cur = Cur->Nodes[0];
+		if (!Cur || Cur->Value != value) return false;
+		for (int i = 0; i < Level; i++) {
+			if (EraseLevels[i]->Nodes[i] != Cur) break;
+			EraseLevels[i]->Nodes[i] = Cur->Nodes[i];
+		}
+		delete Cur;
+		return true;
 	}
 };
